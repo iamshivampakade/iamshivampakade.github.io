@@ -5,7 +5,9 @@ author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-thumbnail: /assets/img/gaming_server/1759729999480.jpg
+image:
+  path: /assets/img/gaming_server/1759729999480.jpg
+  alt: "GamingServer TryHackMe room"
 ---
 
 # GamingServer — TryHackMe (Walkthrough)
