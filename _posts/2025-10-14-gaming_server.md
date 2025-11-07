@@ -5,7 +5,7 @@ author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-media_subpath: /assets/img/gaming_server
+media_subpath: /assets/img/gaming_server/
 image:
       path: 1759729999480.jpg
 ---
@@ -71,7 +71,7 @@ These pages often contain a file named `secretKey` which, when downloaded, looks
 
 
 
-![Uploads directory screenshot](/assets/img/gaming_server/1759730005732.jpg)
+![Uploads directory screenshot](1759730005732.jpg)
 
 ---
 
@@ -94,7 +94,7 @@ john --wordlist=dict.list id_rsa.hash
 When John cracks it you will get the passphrase for the SSH private key (often a simple password like `letmein` in example screenshots).
 
 
-![john cracked password output](/assets/img/gaming_server/1759730006117.jpg)
+![john cracked password output](1759730006117.jpg)
 
 ---
 
@@ -109,7 +109,7 @@ ssh -i id_rsa user@$IP
 
 Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sudo -l`, and check `~` for user flag.
 
-![user shell and user flag](/assets/img/gaming_server/1759730005732.jpg)
+![user shell and user flag](1759730005732.jpg)
 
 ---
 
@@ -137,7 +137,7 @@ cat root.txt
 ```
 
 
-![LXD privesc / device added screenshot](/assets/img/gaming_server/1759730003452.jpg)
+![LXD privesc / device added screenshot](1759730003452.jpg)
 
 ---
 
@@ -151,7 +151,7 @@ ls -la
 cat root.txt
 ```
 
-![root flag found](/assets/img/gaming_server/1759730005732.jpg)
+![root flag found](1759730005732.jpg)
 
 ---
 
