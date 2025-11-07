@@ -1,12 +1,12 @@
 
 ---
-title: "GamingServer — TryHackMe CTF Walkthrough"
+title: "Gaming Server — TryHackMe CTF Walkthrough"
 date: 2025-10-14
 author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-thumbnail: assets/img/gaming_server/1759729999480.jpg
+thumbnail: /assets/img/gaming_server/1759729999480.jpg
 ---
 
 # GamingServer — TryHackMe (Walkthrough)
@@ -14,7 +14,7 @@ thumbnail: assets/img/gaming_server/1759729999480.jpg
 **Completed by:** Shivam Pakade  
 **Completed on:** 14-10-2025  
 **Difficulty:** Easy — Boot2Root (Web ≫ PrivEsc).  
-**Room:** GamingServer (TryHackMe)
+**Room:** Gaming Server (TryHackMe)
 
 ---
 
@@ -68,9 +68,9 @@ gobuster dir -u http://$IP -w /usr/share/wordlists/dirb/common.txt -x php,html,t
 
 These pages often contain a file named `secretKey` which, when downloaded, looks like an SSH private key.
 
-**Add an image here showing the uploads/website discovery:**
 
-`![Uploads directory screenshot](assets/img/gaming_server/1759730005732.jpg)`
+
+`![Uploads directory screenshot](/assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
@@ -94,7 +94,7 @@ When John cracks it you will get the passphrase for the SSH private key (often a
 
 **Add an image here showing John the Ripper cracking the key output:**
 
-`![john cracked password output](assets/img/gaming_server/1759730006117.jpg)`
+`![john cracked password output](/assets/img/gaming_server/1759730006117.jpg)`
 
 ---
 
@@ -111,7 +111,7 @@ Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sud
 
 **Add an SSH login / home dir screenshot here if available:**
 
-`![user shell and user flag](assets/img/gaming_server/1759730005732.jpg)`
+`![user shell and user flag](/assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
@@ -140,7 +140,7 @@ cat root.txt
 
 **Add an LXD / privesc proof screenshot here (shows `Device giveMeRoot added` and mounting `/mnt/root/root`):**
 
-`![LXD privesc / device added screenshot](assets/img/gaming_server/1759730003452.jpg)`
+`![LXD privesc / device added screenshot](/assets/img/gaming_server/1759730003452.jpg)`
 
 ---
 
@@ -154,7 +154,7 @@ ls -la
 cat root.txt
 ```
 
-`![root flag found](assets/img/gaming_server/1759730005732.jpg)`
+`![root flag found](/assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
@@ -195,7 +195,4 @@ cat /mnt/root/root/root.txt
 * If a private key is exposed, look for a local dictionary on the server — rooms often intentionally include a wordlist. Cracking the key is often the quickest way to initial access.
 * Misconfigured container/deployment systems (LXD-like) are a common escalation vector: if containers can mount the host filesystem or create devices, you can often pivot to host root.
 
-
-
-```
-```
+---
