@@ -1,21 +1,25 @@
+Nice — since your images are already at `/assets/img/gaming_server/`, here’s a ready-to-copy **single markdown file** that’s Chirpy/GitHub-Pages safe.
+It uses `relative_url` so images work whether or not `baseurl` is set, fixes heading anchors, and avoids any unclosed code-fence problems.
+
+Copy the entire block below into your `_posts/` file (filename like `2025-10-14-gamingserver.md`) and serve/build your site.
+
+````markdown
 ---
-title : 'Gaming Server — TryHackMe CTF Walkthrough'
-date : 2025-10-14
+title: "GamingServer — TryHackMe CTF Walkthrough"
+date: 2025-10-14
 author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-media_subpath: /assets/img/gaming_server/
-image:
-      path: 1759729999480.jpg
+thumbnail: /assets/img/gaming_server/1759729999480.jpg
 ---
 
-# Gaming Server — TryHackMe (Walkthrough)
+# GamingServer — TryHackMe (Walkthrough)
 
 **Completed by:** Shivam Pakade  
 **Completed on:** 14-10-2025  
 **Difficulty:** Easy — Boot2Root (Web ≫ PrivEsc).  
-**Room:** Gaming Server (TryHackMe)
+**Room:** GamingServer (TryHackMe)
 
 ---
 
@@ -63,15 +67,15 @@ gobuster dir -u http://$IP -w /usr/share/wordlists/dirb/common.txt -x php,html,t
 
 2. You should find:
 
-   * `/uploads/` (an uploads directory containing files)
-   * `/secret/` (file(s) such as `secretKey`)
-   * possibly `robots.txt` referencing the uploads/secret paths
+* `/uploads/` (an uploads directory containing files)
+* `/secret/` (file(s) such as `secretKey`)
+* possibly `robots.txt` referencing the uploads/secret paths
 
 These pages often contain a file named `secretKey` which, when downloaded, looks like an SSH private key.
 
+**Image — place this screenshot directly under the paragraph above (already present at `/assets/img/gaming_server/1759730005732.jpg`):**
 
-
-![Uploads directory screenshot](1759730005732.jpg)
+`![Uploads directory screenshot]({{ "/assets/img/gaming_server/1759730005732.jpg" | relative_url }})`
 
 ---
 
@@ -93,8 +97,9 @@ john --wordlist=dict.list id_rsa.hash
 
 When John cracks it you will get the passphrase for the SSH private key (often a simple password like `letmein` in example screenshots).
 
+**Image — John the Ripper cracked output (place here):**
 
-![john cracked password output](1759730006117.jpg)
+`![john cracked password output]({{ "/assets/img/gaming_server/1759730006117.jpg" | relative_url }})`
 
 ---
 
@@ -109,7 +114,9 @@ ssh -i id_rsa user@$IP
 
 Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sudo -l`, and check `~` for user flag.
 
-![user shell and user flag](1759730005732.jpg)
+**Image — SSH session / home dir (place here):**
+
+`![user shell and user flag]({{ "/assets/img/gaming_server/1759730005732.jpg" | relative_url }})`
 
 ---
 
@@ -121,9 +128,9 @@ This room features an insecure deployment / LXD-like system that allows privileg
 
 2. Common exploitation approach:
 
-   * You find a deployer or script that can write devices (e.g. `giveMeRoot` device or similar).
-   * Use the deployment mechanism to create a device or container that mounts the host filesystem (e.g. bind `/` into the container).
-   * From the mounted host root, access `/root/root.txt` or add your own SSH key to `/root/.ssh/authorized_keys`.
+* You find a deployer or script that can write devices (e.g. `giveMeRoot` device or similar).
+* Use the deployment mechanism to create a device or container that mounts the host filesystem (e.g. bind `/` into the container).
+* From the mounted host root, access `/root/root.txt` or add your own SSH key to `/root/.ssh/authorized_keys`.
 
 Example (high level):
 
@@ -136,8 +143,9 @@ ls
 cat root.txt
 ```
 
+**Image — LXD privesc proof (place here):**
 
-![LXD privesc / device added screenshot](1759730003452.jpg)
+`![LXD privesc / device added screenshot]({{ "/assets/img/gaming_server/1759730003452.jpg" | relative_url }})`
 
 ---
 
@@ -151,7 +159,9 @@ ls -la
 cat root.txt
 ```
 
-![root flag found](1759730005732.jpg)
+**Image — root flag proof (place here):**
+
+`![root flag found]({{ "/assets/img/gaming_server/1759729999480.jpg" | relative_url }})`
 
 ---
 
@@ -192,4 +202,48 @@ cat /mnt/root/root/root.txt
 * If a private key is exposed, look for a local dictionary on the server — rooms often intentionally include a wordlist. Cracking the key is often the quickest way to initial access.
 * Misconfigured container/deployment systems (LXD-like) are a common escalation vector: if containers can mount the host filesystem or create devices, you can often pivot to host root.
 
+**References / further reading:**
+
+* TryHackMe — GamingServer room (official).
+* Community writeups and blog posts that demonstrate similar chains (web → secret key → ssh → LXD privesc).
+
 ---
+
+````
+
+---
+
+### Final checklist (do these if the image still doesn't appear)
+
+1. Ensure the files are present on disk (case-sensitive):
+```bash
+ls -la assets/img/gaming_server/
+````
+
+2. Rebuild & inspect `_site`:
+
+```bash
+bundle exec jekyll build --trace
+ls -la _site/assets/img/gaming_server/
+```
+
+3. Look at the generated HTML for your post and confirm there is an `<img>` tag:
+
+```bash
+grep -n '<img ' -R _site | grep gaming_server || true
+sed -n '1,220p' _site/posts/<your-post-folder>/index.html
+```
+
+4. If the MD still renders the literal `![...](...)` text:
+
+* Make sure the `![...]` line is **not** indented with spaces or tabs (must start at column 1), and
+* make sure there's no unclosed code fence (``` ) earlier in the file.
+
+---
+
+If you want I can:
+
+* produce the exact `sed`/`awk` commands to auto-replace the four image lines in your current file, or
+* check your generated `_site` HTML (paste the `sed` output from step 3) and point out the exact problem line.
+
+Which would you like me to do next?
