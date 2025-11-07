@@ -1,6 +1,5 @@
-
 ---
-title: "GamingServer — TryHackMe CTF Walkthrough"
+title: "Gaming Server — TryHackMe CTF Walkthrough"
 date: 2025-10-14
 author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
@@ -68,7 +67,6 @@ gobuster dir -u http://$IP -w /usr/share/wordlists/dirb/common.txt -x php,html,t
 
 These pages often contain a file named `secretKey` which, when downloaded, looks like an SSH private key.
 
-**Image — place this screenshot directly under the paragraph above (already present at `/assets/img/gaming_server/1759730005732.jpg`):**
 
 ![Uploads directory screenshot]({{ "/assets/img/gaming_server/1759730005732.jpg" | relative_url }})
 
@@ -92,7 +90,7 @@ john --wordlist=dict.list id_rsa.hash
 
 When John cracks it you will get the passphrase for the SSH private key (often a simple password like `letmein` in example screenshots).
 
-**Image — John the Ripper cracked output (place here):**
+
 
 ![john cracked password output]({{ "/assets/img/gaming_server/1759730006117.jpg" | relative_url }})
 
@@ -109,7 +107,6 @@ ssh -i id_rsa user@$IP
 
 Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sudo -l`, and check `~` for user flag.
 
-**Image — SSH session / home dir (place here):**
 
 ![user shell and user flag]({{ "/assets/img/gaming_server/1759730005732.jpg" | relative_url }})
 
@@ -138,7 +135,6 @@ ls
 cat root.txt
 ```
 
-**Image — LXD privesc proof (place here):**
 
 ![LXD privesc / device added screenshot]({{ "/assets/img/gaming_server/1759730003452.jpg" | relative_url }})
 
@@ -154,7 +150,6 @@ ls -la
 cat root.txt
 ```
 
-**Image — root flag proof (place here):**
 
 ![root flag found]({{ "/assets/img/gaming_server/1759729999480.jpg" | relative_url }})
 
