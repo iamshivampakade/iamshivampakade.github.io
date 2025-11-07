@@ -23,12 +23,12 @@ alt: "Kioptrix Level 1 — Recon screenshot"
 
 ## Table of contents
 
-1. [Overview & lab setup](#overview--lab-setup)
-2. [Recon — finding the target](#recon---finding-the-target)
+1. [Recon — finding the target](#recon-finding-the-target)
+2. [Service enumeration — SMB & HTTP](#service-enumeration-smb-http)
 3. [Port & service enumeration (nmap)](#port--service-enumeration-nmap)
 4. [Service enumeration — SMB & HTTP](#service-enumeration---smb--http)
 5. [Exploit discovery & execution (SearchSploit / Metasploit)](#exploit-discovery--execution-searchsploit--metasploit)
-6. [Post-exploit / proof (root shell)](#post-exploit--proof-root-shell)
+6. [Post-exploit / proof (root shell)](#post-exploit-proof-root-shell)
 7. [Cleanup, lessons learned & references](#cleanup-lessons-learned--references)
 
 ---
