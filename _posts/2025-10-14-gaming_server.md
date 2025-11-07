@@ -1,6 +1,6 @@
 ---
 title: "Gaming Server — TryHackMe CTF Walkthrough"
-author: "Shivam Pakade"
+author: shivam
 date: 2025-10-14
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
