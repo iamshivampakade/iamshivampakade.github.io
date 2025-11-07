@@ -6,7 +6,7 @@ author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-thumbnail: assets/gaming_server/images/1759729999480.jpg
+thumbnail: assets/img/gaming_server/1759729999480.jpg
 ---
 
 # GamingServer — TryHackMe (Walkthrough)
@@ -70,7 +70,7 @@ These pages often contain a file named `secretKey` which, when downloaded, looks
 
 **Add an image here showing the uploads/website discovery:**
 
-`![Uploads directory screenshot](assets/images/gaming_server/1759730005732.jpg)`
+`![Uploads directory screenshot](assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
@@ -94,7 +94,7 @@ When John cracks it you will get the passphrase for the SSH private key (often a
 
 **Add an image here showing John the Ripper cracking the key output:**
 
-`![john cracked password output](assets/images/gaming_server/1759730006117.jpg)`
+`![john cracked password output](assets/img/gaming_server/1759730006117.jpg)`
 
 ---
 
@@ -111,7 +111,7 @@ Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sud
 
 **Add an SSH login / home dir screenshot here if available:**
 
-`![user shell and user flag](assets/images/gaming_server/1759730005732.jpg)`
+`![user shell and user flag](assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
@@ -140,7 +140,7 @@ cat root.txt
 
 **Add an LXD / privesc proof screenshot here (shows `Device giveMeRoot added` and mounting `/mnt/root/root`):**
 
-`![LXD privesc / device added screenshot](assets/images/gaming_server/1759730003452.jpg)`
+`![LXD privesc / device added screenshot](assets/img/gaming_server/1759730003452.jpg)`
 
 ---
 
@@ -154,7 +154,7 @@ ls -la
 cat root.txt
 ```
 
-`![root flag found](assets/images/gaming_server/1759730005732.jpg)`
+`![root flag found](assets/img/gaming_server/1759730005732.jpg)`
 
 ---
 
