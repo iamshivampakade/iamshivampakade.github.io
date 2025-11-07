@@ -43,8 +43,7 @@ arp-scan --interface=eth0 --localnet
 
 In this run the Kioptrix VM resolved to `192.168.120.133`. Snapshot the VM before proceeding.
 
-**Screenshot — Kioptrix console / IP info:**
-`![Kioptrix console + IP]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079461030.jpg' | relative_url }})`
+![Kioptrix console + IP]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079461030.jpg' | relative_url }})
 
 ---
 
@@ -66,8 +65,7 @@ Observed output (example):
 443/tcp  open  ssl/https Apache/1.3.20 (mod_ssl/2.x)
 ```
 
-**Screenshot — nmap output:**
-`![nmap output]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079460546.jpg' | relative_url }})`
+![nmap output]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079460546.jpg' | relative_url }})
 
 **Notes:** service/version strings are clues for exploit discovery; older Apache/Samba builds are expected on Kioptrix L1.
 
@@ -94,7 +92,7 @@ get index.html
 ```
 
 **Screenshot — SMB enumeration & searchsploit hint:**
-`![SMB enumeration]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079458386.jpg' | relative_url }})`
+![SMB enumeration]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079458386.jpg' | relative_url }})
 
 ### HTTP enumeration
 
@@ -135,8 +133,8 @@ msf exploit(samba_some_exploit) > set LHOST 192.168.120.132
 msf exploit(samba_some_exploit) > run
 ```
 
-**Screenshot — Metasploit sessions opened:**
-`![msfconsole sessions]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079460997.jpg' | relative_url }})`
+
+![msfconsole sessions]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079460997.jpg' | relative_url }})
 
 > Note: only run exploits that match the **exact** target version & architecture. Mismatch can crash services.
 
@@ -153,8 +151,8 @@ uname -a
 cat /root/root.txt     # if present for proof
 ```
 
-**Screenshot — root shell proof (`whoami` -> root):**
-`![root shell proof]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079461030.jpg' | relative_url }})`
+
+![root shell proof]({{ '/assets/img/vulnhub/kioptrix_level-1/1760079461030.jpg' | relative_url }})
 
 Post-exploit actions (lab-only):
 
