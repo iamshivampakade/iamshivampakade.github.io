@@ -1,3 +1,4 @@
+
 ---
 title: "GamingServer — TryHackMe CTF Walkthrough"
 date: 2025-10-14
@@ -5,14 +6,14 @@ author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, GamingServer, boot2root, writeup, walkthrough]
 summary: "Boot2Root walkthrough for the TryHackMe room *GamingServer* — enumeration, exploitation and privilege escalation (completed 14-10-2025)."
-thumbnail: /assets/images/1759729999480.jpg
+thumbnail: /assets/gaming_server/images/1759729999480.jpg
 ---
 
 # GamingServer — TryHackMe (Walkthrough)
 
-**Completed by:** Shivam Pakade
-**Completed on:** 14-10-2025
-**Difficulty:** Easy — Boot2Root (Web ≫ PrivEsc).
+**Completed by:** Shivam Pakade  
+**Completed on:** 14-10-2025  
+**Difficulty:** Easy — Boot2Root (Web ≫ PrivEsc).  
 **Room:** GamingServer (TryHackMe)
 
 ---
@@ -25,12 +26,12 @@ A beginner Boot2Root covering web enumeration, discovery of an exposed private k
 
 ## Table of contents
 
-1. [Recon & Scanning](#recon--scanning)
-2. [Web Enumeration](#web-enumeration)
-3. [Finding the private key & cracking it](#finding-the-private-key--cracking-it)
-4. [Initial access (SSH)](#initial-access-ssh)
-5. [Privilege escalation (LXD / deployment)](#privilege-escalation-lxd--deployment)
-6. [Root flag & clean up](#Root-flag--final-proof)
+1. [Recon & Scanning](#recon--scanning)  
+2. [Web Enumeration](#web-enumeration)  
+3. [Finding the private key & cracking it](#finding-the-private-key--cracking-it)  
+4. [Initial access (SSH)](#initial-access-ssh)  
+5. [Privilege escalation (LXD / deployment)](#privilege-escalation-lxd--deployment)  
+6. [Root flag & final proof](#root-flag--final-proof)  
 7. [Lessons learned & resources](#lessons-learned--resources)
 
 ---
@@ -45,7 +46,7 @@ nmap -Pn -sV -p- -T4 $IP -oN nmap_full.txt
 
 # or faster scan for known ports
 nmap -Pn -sV -p22,80 $IP -oN nmap_quick.txt
-```
+````
 
 Typical result for this room: **ports 80 (HTTP) and 22 (SSH)** are open.
 
@@ -71,7 +72,6 @@ These pages often contain a file named `secretKey` which, when downloaded, looks
 
 `![Uploads directory screenshot](/assets/images/gaming_server/1759730005732.jpg)`
 
-
 ---
 
 ## Finding the private key & cracking it
@@ -96,7 +96,6 @@ When John cracks it you will get the passphrase for the SSH private key (often a
 
 `![john cracked password output](/assets/images/gaming_server/1759730006117.jpg)`
 
-
 ---
 
 ## Initial access (SSH)
@@ -113,7 +112,6 @@ Once on the box, enumerate: `id`, `whoami`, `hostname`, `ls -la`, `ps aux`, `sud
 **Add an SSH login / home dir screenshot here if available:**
 
 `![user shell and user flag](/assets/images/gaming_server/1759730005732.jpg)`
-
 
 ---
 
@@ -144,7 +142,6 @@ cat root.txt
 
 `![LXD privesc / device added screenshot](/assets/images/gaming_server/1759730003452.jpg)`
 
-
 ---
 
 ## Root flag & final proof
@@ -158,7 +155,6 @@ cat root.txt
 ```
 
 `![root flag found](/assets/images/gaming_server/1759730005732.jpg)`
-
 
 ---
 
@@ -191,3 +187,15 @@ ps aux | grep deploy
 cat /mnt/root/root/root.txt
 ```
 
+---
+
+## Lessons learned & resources
+
+* Always check for hidden files and directories (`robots.txt`, `/uploads`, `/secret`).
+* If a private key is exposed, look for a local dictionary on the server — rooms often intentionally include a wordlist. Cracking the key is often the quickest way to initial access.
+* Misconfigured container/deployment systems (LXD-like) are a common escalation vector: if containers can mount the host filesystem or create devices, you can often pivot to host root.
+
+
+
+```
+```
