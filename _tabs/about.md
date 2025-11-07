@@ -2,9 +2,6 @@
 # the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
----
-
----
 title: "About Me"
 date: 2025-11-06
 categories: [Profile]
