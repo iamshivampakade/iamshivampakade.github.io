@@ -1,5 +1,4 @@
 ---
-
 title: "TryHackMe — jack-of-all-trades (Walkthrough)"
 author: shivam
 date: 2025-11-06
@@ -10,7 +9,7 @@ media_subpath: /images/TryHackMe/jacktrades/
 image:
   path: jacktrades.jpeg
   alt: "Jack-of-all-trades — site header"
----------------------------------------
+---
 
 > Full, step-by-step walkthrough for **TryHackMe — jack-of-all-trades**.
 > I explain the techniques used (recon, web enumeration, RCE, credential harvesting, getting a shell inside a container, and Docker socket escape).
