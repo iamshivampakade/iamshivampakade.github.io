@@ -42,7 +42,7 @@ You should see at least:
 
 Screenshot (example `nmap` output):
 
-![nmap results](/assets/img/TryHackMe/jacktrades/nmap_result.png)
+![nmap results](nmap_result.png)
 
 > Tip: If the room provides a hostname (e.g., `jack.thm`) add it to `/etc/hosts` for easier browsing.
 
