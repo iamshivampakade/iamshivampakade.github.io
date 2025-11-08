@@ -48,7 +48,6 @@ Next step: open the web application in a browser.
 
 ---
 
-<a id="web-discovery-and-quick-probing"></a>
 
 ## 2. Web discovery & quick probing
 
@@ -69,7 +68,6 @@ Screenshots:
 
 ---
 
-<a id="remote-command-execution-rce-via-cmd-parameter"></a>
 
 ## 3. Remote command execution (RCE) via `cmd` parameter
 
@@ -97,7 +95,6 @@ The `jacks_password_list` appears to contain many lines of non-printable or symb
 
 ---
 
-<a id="harvesting-jacks_password_list-and-decoding"></a>
 
 ## 4. Harvesting `jacks_password_list` and decoding
 
@@ -120,7 +117,7 @@ In this challenge the initial list looked like garbage, but later steps revealed
 
 ---
 
-<a id="initial-access--get-a-shell-as-jack"></a>
+
 
 ## 5. Initial access — get a shell as jack
 
@@ -178,7 +175,7 @@ Once you have a shell (webshell or SSH), enumerate the system.
 
 ---
 
-<a id="privilege-escalation--finding-root-clues--flags"></a>
+
 
 ## 6. Privilege escalation — finding root clues & flags
 
@@ -213,7 +210,6 @@ From enumeration we found a `root` todo/note that contained the root password or
 
 ---
 
-<a id="root-flag--cleanup"></a>
 
 ## 7. Root flag & cleanup
 
@@ -236,7 +232,7 @@ Example screenshot of the final root flag view:
 
 ---
 
-<a id="references--notes"></a>
+
 
 ## 8. References & notes
 
