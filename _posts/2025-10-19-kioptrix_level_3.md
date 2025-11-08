@@ -63,7 +63,7 @@ arp-scan --localnet
 
 Once you know the target IP (examples below use `192.168.56.118` and `192.168.120.136`), proceed to port scanning.
 
-**Add image — VM console / target IP:**
+
 ![Target / console]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg' | relative_url }})
 
 ---
@@ -79,7 +79,6 @@ nmap -sV -O -T4 192.168.56.118 -oN scans/kioptrix_l3_nmap.txt
 
 Typical (observed in labs) useful ports: **22 (ssh)**, **80/443 (http/https)**, **111 (rpcbind)**, **631 (cups)**, **3306 (mysql)**, and any other non-standard ports.
 
-**Add image — nmap / recon output:**
 ![nmap / service discovery]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587400973.jpg' | relative_url }})
 
 **Notes**
@@ -107,7 +106,7 @@ Manual checks:
 * Inspect HTML/JS comments and included files for credentials or hints.
 * Intercept requests with Burp Suite to test parameters (e.g., `id=`, `sort=`, file uploads).
 
-**Add image — Burp / intercepted request or directory listing:**
+
 ![burp / web request]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587403325.jpg' | relative_url }})
 
 **What to look for**
@@ -224,7 +223,7 @@ grep -R "password" /var/www /etc -n 2>/dev/null || true
 sudo /usr/bin/vim -c ':!sh'
 ```
 
-**Add image — privilege escalation / root obtained:**
+
 ![root obtained / proof]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg' | relative_url }})
 
 > In many Kioptrix walkthroughs the combination of a web RCE to get a low-priv shell and local file/cron/suid misconfigurations leads to root.
