@@ -7,8 +7,8 @@ categories: [ctf, vulnhub, writeup]
 tags: [Kioptrix, VulnHub, boot2root, walkthrough, advanced]
 summary: "Detailed Kioptrix Level 3 (VulnHub) walkthrough — reconnaissance, service & web enumeration, exploit discovery, initial access and privilege escalation. Chirpy-compatible."
 image:
-path: /assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg
-alt: "Kioptrix L3 — Recon / nmap"
+  path: /assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg
+  alt: "Kioptrix L3 — Recon / nmap"
 ---
 
 # Kioptrix Level 3 — VulnHub (Walkthrough)
