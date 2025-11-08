@@ -9,7 +9,7 @@ summary: "Detailed Kioptrix Level 3 (VulnHub) walkthrough — reconnaissance, se
 image:
 path: /assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg
 alt: "Kioptrix L3 — Recon / nmap"
----------------------------------
+---
 
 # Kioptrix Level 3 — VulnHub (Walkthrough)
 
