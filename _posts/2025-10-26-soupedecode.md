@@ -5,7 +5,8 @@ author: "Shivam Pakade"
 categories: [ctf, tryhackme, writeup]
 tags: [TryHackMe, Soupedecode, encoding, decoding, writeup]
 summary: "Step-by-step walkthrough for the TryHackMe room 'Soupedecode' — reconnaissance, decoding challenges and flags. Chirpy-compatible with images."
-thumbnail: /assets/img/TryHackMe/soupedecode/room_image.webp
+image: 
+  path: /assets/img/TryHackMe/soupedecode/room_image.webp
 ---
 
 # Soupedecode — TryHackMe Walkthrough
