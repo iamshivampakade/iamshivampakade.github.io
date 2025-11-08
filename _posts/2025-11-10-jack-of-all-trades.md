@@ -5,7 +5,7 @@ date: 2025-11-06
 categories: [TryHackMe, writeup]
 tags: [jack-of-all-trades, TryHackMe, web, rce, docker, container-escape, privilege-escalation]
 render_with_liquid: false
-media_subpath: /images/TryHackMe/jacktrades/
+media_subpath: /assets/img/TryHackMe/jacktrades/
 image:
   path: jacktrades.jpeg
   alt: "Jack-of-all-trades — site header"
@@ -13,7 +13,6 @@ image:
 
 > Full, step-by-step walkthrough for **TryHackMe — jack-of-all-trades**.
 > I explain the techniques used (recon, web enumeration, RCE, credential harvesting, getting a shell inside a container, and Docker socket escape).
-> All images referenced live under `/assets/img/TryHackMe/jacktrades/` — ensure the filenames are present and case-exact.
 
 ## Table of contents
 
