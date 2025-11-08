@@ -35,9 +35,6 @@ image:
 
 Soupedecode is a decoding challenge that requires identifying multiple layers of encoding (Base64, hex, rot, simple substitution, etc.) and iteratively decoding them to reveal the flag(s). This walkthrough documents the thought process, commands and small scripts that helped me decode the payload.
 
-**Image: room cover / banner**  
-[![Soupedecode room banner]({{ '/assets/img/TryHackMe/soupedecode/room_image.webp' | relative_url }})]({{ '/assets/img/TryHackMe/soupedecode/room_image.webp' | relative_url }})
-
 ---
 
 ## Initial enumeration and reading the challenge {#initial-enumeration-and-reading-the-challenge}
