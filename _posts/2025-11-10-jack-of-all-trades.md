@@ -25,8 +25,6 @@ image:
 
 ---
 
-<a id="recon-and-port-scan"></a>
-
 ## 1. Recon & port scan
 
 Start with a quick nmap scan to see open services and versions.
