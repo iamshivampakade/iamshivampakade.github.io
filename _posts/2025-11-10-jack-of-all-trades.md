@@ -6,7 +6,7 @@ categories: [ctf, tryhackme, writeup]
 tags: [jack-of-all-trades, tryhackme, web, rce, priv-esc]
 summary: "Step-by-step walkthrough for the Jack-of-all-trades TryHackMe box: recon, web discovery, RCE via unsafe cmd param, credential harvesting and privilege escalation."
 image: 
-  path: /assets/img/TryHackMe/jacktrades/site_header.png
+  path: /assets/img/TryHackMe/jacktrades/jacktrades.jepg
   alt: "Jack-of-all-trades — site header screenshot"
 ---
 
