@@ -64,7 +64,7 @@ arp-scan --localnet
 Once you know the target IP (examples below use `192.168.56.118` and `192.168.120.136`), proceed to port scanning.
 
 
-![Target / console]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587400390.jpg' | relative_url }})
+![Target / console]({{ '/assets/img/vulnhub/kioptrix_level-3/1760587403325.jpg' | relative_url }})
 
 ---
 
