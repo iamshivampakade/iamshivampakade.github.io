@@ -54,8 +54,7 @@ Open the target in your browser (`http://<target-ip>`). On the site we see a fri
 
 Example site header and index pages:
 
-![site header](/assets/img/TryHackMe/jacktrades/site_header.png)
-![site accessed](/assets/img/TryHackMe/jacktrades/site_accesed.png)
+![site accessed](site_accesed.png)
 
 Run directory discovery (ffuf/gobuster) to find hidden endpoints:
 
@@ -75,7 +74,7 @@ Example: visiting `http://<target>/nnxhweOV/index.php?cmd=cat+/home/jacks_passwo
 
 Screenshot showing the remote command output:
 
-![RCE demo](/assets/img/TryHackMe/jacktrades/RCE.png)
+![RCE demo](RCE.png)
 
 > **Why this matters:** an unauthenticated or privileged RCE channel allows you to read arbitrary files, enumerate the filesystem, hunt for credentials and upload shells.
 
@@ -91,13 +90,13 @@ The `jacks_password_list` file contained many obfuscated-looking entries. Save t
 
 Screenshot of raw list returned by the RCE endpoint:
 
-![password list](/assets/img/TryHackMe/jacktrades/passowrd_list.png)
+![password list](passowrd_list.png)
 
 After decoding/translating some lines you will discover viable credentials (username/password pairs) for `jack` or other local accounts.
 
 Screenshot: harvested/decoded credentials:
 
-![passwords found](/assets/img/TryHackMe/jacktrades/passwords.png)
+![passwords found](passwords.png)
 
 > Practical approach: automate line-by-line testing with a small script that attempts base64 decode, rot47, and ascii checks to quickly surface readable strings.
 
@@ -124,7 +123,7 @@ find / -perm -4000 -type f 2>/dev/null
 
 Example: user flag captured:
 
-![user flag](/assets/img/TryHackMe/jacktrades/user_flag.png)
+![user flag](user_flag.png)
 
 ---
 
@@ -141,7 +140,7 @@ In this room you’ll find artifacts or notes pointing to a root credential or a
 
 Example screenshot showing root-related clue/password found:
 
-![root/pass clue](/assets/img/TryHackMe/jacktrades/root_pass.png)
+![root/pass clue](root_pass.png)
 
 If a privileged path is obvious (for instance, a file with a password or a binary you can abuse), follow it to get `root`.
 
@@ -153,7 +152,7 @@ After a successful escalation, read the root flag and clean up any artifacts you
 
 Root flag example:
 
-![root flag](/assets/img/TryHackMe/jacktrades/root_flag.png)
+![root flag](root_flag.png)
 
 **Post-exploitation hygiene:** remove any uploaded shells, close reverse listeners, and revoke any keys you added if the environment requires it.
 
