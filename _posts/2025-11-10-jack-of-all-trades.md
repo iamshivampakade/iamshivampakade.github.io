@@ -50,7 +50,7 @@ Screenshot (example `nmap` output):
 
 ## 2. Web discovery and quick probing {#web-discovery-and-quick-probing}
 You’ll find that your browser most likely throws a hissy fit when you attempt to access the webserver at `http://<machine-ip>:22`
-![inaccesable site](inaccesable.png)
+![inaccesable site](inaccesable_site.png)
 
 In Firefox, navigate to about:config. You’ll get a message telling you that you’re voiding your warranty (for free software). Agree, and you’ll be shown a list of configurations:
 
