@@ -1,4 +1,4 @@
-👋 Hi, I’m **Shivam Pakade** — an **Cybersecurity Researcher** and **Red Team Learner** passionate about exploring the offensive and defensive sides of cybersecurity.  
+👋 Hi, I’m **Shivam Pakade** — a **Cybersecurity Researcher** and **Red Team Learner** passionate about exploring the offensive and defensive sides of cybersecurity.  
 
 I’m currently advancing my expertise through the **CDAC DITISS (Diploma in IT Infrastructure, Systems, and Security)** program, where I’ve gained a strong foundation in:
 
