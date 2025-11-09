@@ -49,6 +49,16 @@ Screenshot (example `nmap` output):
 ---
 
 ## 2. Web discovery and quick probing {#web-discovery-and-quick-probing}
+You’ll find that your browser most likely throws a hissy fit when you attempt to access the webserver at `http://<machine-ip>:22`
+![inaccesable site](inaccesable.png)
+
+In Firefox, navigate to about:config. You’ll get a message telling you that you’re voiding your warranty (for free software). Agree, and you’ll be shown a list of configurations:
+
+Firefox configuration file
+about:config in Firefox
+From here, search for network.security.ports.banned.override. In some versions of Firefox this might show nothing (in which case right-click anywhere on the page, choose new -> String and use the search query as the preference name) — in others it will show the same as for me:
+![changing_adv_firefox](changing_adv_firefox.png)
+
 
 Open the target in your browser (`http://<target-ip>`). On the site we see a friendly landing page and limited navigation — but the header and assets are accessible.
 
@@ -112,7 +122,7 @@ ssh jack@<target-ip>
 
 If SSH is disabled for that account, use the webshell path: upload a minimal PHP shell or invoke commands via the RCE `cmd` parameter to pull a reverse shell.
 
-Once `jack`, look for `user.txt` and standard enumeration:
+Once `jack`, look for `user.jpg` and standard enumeration:
 
 ```bash
 ls -la
