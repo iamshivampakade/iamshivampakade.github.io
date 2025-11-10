@@ -29,7 +29,7 @@ image:
 
 ## 1. Recon and port scan {#recon-and-port-scan}
 
-Start with an `nmap` scan to discover live hosts and services. A fast, sensible scan for this room is:
+Start with an `nmap` scan to discover live hosts and services. A fast, sensible scan for this room is: 
 
 ```bash
 nmap -sC -sV -p 22,80 -Pn 10.10.138.30
