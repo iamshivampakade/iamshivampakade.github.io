@@ -1,7 +1,7 @@
 ---
 title: "TryHackMe — jack-of-all-trades (Walkthrough)"
 author: shivam
-date: 2025-11-06
+date: 2025-11-10
 categories: [TryHackMe, writeup]
 tags: [jack-of-all-trades, TryHackMe, web, rce, docker, container-escape, privilege-escalation]
 render_with_liquid: false
